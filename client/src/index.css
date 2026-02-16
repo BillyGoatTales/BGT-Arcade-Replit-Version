@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Contemporary Web3 theme colors */
+  --background: 240 10% 4%;
+  --foreground: 0 0% 98%;
+  --card: 240 10% 6%;
+  --card-foreground: 0 0% 95%;
+  --popover: 240 10% 6%;
+  --popover-foreground: 0 0% 95%;
+  --primary: 262 83% 58%; /* Web3 Purple */
+  --primary-foreground: 0 0% 98%;
+  --secondary: 173 58% 39%; /* Teal Accent */
+  --secondary-foreground: 0 0% 98%;
+  --muted: 240 10% 12%;
+  --muted-foreground: 0 0% 65%;
+  --accent: 291 64% 42%; /* Deep Purple */
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 240 10% 15%;
+  --input: 240 10% 12%;
+  --ring: 262 83% 58%;
+  --radius: 0.75rem;
+  
+  /* Arcade Colors */
+  --neon-cyan: hsl(180, 100%, 50%);
+  --neon-magenta: hsl(300, 100%, 50%);
+  --neon-yellow: hsl(60, 100%, 50%);
+  --neon-green: hsl(120, 100%, 50%);
+  --electric-orange: hsl(25, 100%, 50%);
+  --deep-purple: hsl(260, 50%, 12%);
+  --midnight-blue: hsl(240, 47%, 10%);
+  --arcade-dark: hsl(0, 0%, 17%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased;
+    background: linear-gradient(to bottom, var(--deep-purple), var(--midnight-blue), var(--deep-purple));
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    min-height: 100vh;
+  }
+  
+  /* Crisp text readability */
+  .font-pixel {
+    text-shadow: 1px 1px 0px rgba(0,0,0,0.8);
+    font-weight: 400;
+  }
+  
+  .text-neon-cyan,
+  .text-neon-magenta,
+  .text-neon-yellow,
+  .text-neon-green,
+  .text-electric-orange {
+    text-shadow: 0 0 2px currentColor, 1px 1px 0px rgba(0,0,0,0.8);
+    font-weight: 500;
+    filter: none;
+  }
+  
+  /* Better contrast for regular text */
+  p, span:not(.font-pixel) {
+    text-shadow: 1px 1px 0px rgba(0,0,0,0.5);
+  }
+}
+
+@layer components {
+  .font-pixel {
+    font-family: 'Press Start 2P', cursive;
+  }
+  
+  .font-retro {
+    font-family: 'Orbitron', sans-serif;
+  }
+  
+  .text-neon-cyan {
+    color: var(--neon-cyan);
+  }
+  
+  .text-neon-magenta {
+    color: #ff00ff;
+    text-shadow: 0 0 2px #ff00ff, 1px 1px 0px rgba(0,0,0,0.8);
+  }
+  
+  .text-neon-yellow {
+    color: var(--neon-yellow);
+  }
+  
+  .text-neon-green {
+    color: var(--neon-green);
+  }
+  
+  .text-electric-orange {
+    color: var(--electric-orange);
+  }
+  
+  .bg-deep-purple {
+    background-color: var(--deep-purple);
+  }
+  
+  .bg-midnight-blue {
+    background-color: var(--midnight-blue);
+  }
+  
+  .bg-arcade-dark {
+    background-color: var(--arcade-dark);
+  }
+  
+  .border-neon-cyan {
+    border-color: var(--neon-cyan);
+  }
+  
+  .border-neon-magenta {
+    border-color: var(--neon-magenta);
+  }
+  
+  .border-neon-yellow {
+    border-color: var(--neon-yellow);
+  }
+  
+  .border-neon-green {
+    border-color: var(--neon-green);
+  }
+  
+  .animate-neon-pulse {
+    animation: neon-pulse 3s ease-in-out infinite alternate;
+  }
+  
+  .animate-arcade-flicker {
+    animation: arcade-flicker 0.15s infinite linear alternate;
+  }
+  
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+  
+  .shadow-neon-cyan {
+    box-shadow: 0 0 20px var(--neon-cyan), 0 0 40px var(--neon-cyan);
+  }
+  
+  .shadow-neon-magenta {
+    box-shadow: 0 0 20px var(--neon-magenta), 0 0 40px var(--neon-magenta);
+  }
+  
+  .shadow-neon-yellow {
+    box-shadow: 0 0 20px var(--neon-yellow), 0 0 40px var(--neon-yellow);
+  }
+  
+  .shadow-neon-green {
+    box-shadow: 0 0 20px var(--neon-green), 0 0 40px var(--neon-green);
+  }
+  
+  .crt-effect {
+    background: linear-gradient(90deg, transparent 50%, rgba(0,255,255,0.03) 50%);
+    background-size: 4px 4px;
+  }
+  
+  .scanlines {
+    position: relative;
+  }
+  
+  .scanlines::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(transparent 50%, rgba(0,255,0,0.03) 50%);
+    background-size: 100% 4px;
+    pointer-events: none;
+  }
+  
+  .arcade-button {
+    background: linear-gradient(145deg, #333, #1a1a1a);
+    border: 2px solid #555;
+    transition: all 0.1s ease;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .arcade-button:hover {
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 15px rgba(0,255,255,0.5);
+    transform: translateY(-2px);
+  }
+  
+  .arcade-button:active {
+    transform: translateY(0);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);
+  }
+}
+
+@keyframes neon-pulse {
+  from { 
+    text-shadow: 0 0 1px currentColor, 1px 1px 0px rgba(0,0,0,0.8); 
+    filter: brightness(1.05);
+  }
+  to { 
+    text-shadow: 0 0 2px currentColor, 1px 1px 0px rgba(0,0,0,0.8); 
+    filter: brightness(0.95);
+  }
+}
+
+@keyframes arcade-flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes glow {
+  from { 
+    box-shadow: 0 0 8px currentColor; 
+  }
+  to { 
+    box-shadow: 0 0 12px currentColor; 
+  }
+}
